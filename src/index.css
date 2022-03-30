@@ -7,7 +7,88 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  text-align: center;
+}
+
+.logos {
+  height: 35vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+button {
+  font-size: 0.85em;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay .banner {
+  width: 97vw;
+}
+
+#logo {
+  animation: move-up-logo .85s cubic-bezier(0.65, 0, 0.35, 1) 3.5s;
+  animation-fill-mode: forwards;
+}
+
+#text {
+  animation: move-up-text .75s cubic-bezier(0.65, 0, 0.35, 1) 3.65s;
+  animation-fill-mode: forwards;
+  fill: #fff;
+  font-size: 41pt;
+}
+
+#close-button {
+  opacity: 0;
+  animation: appear .85s cubic-bezier(0.65, 0, 0.35, 1) 4.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes move-up-logo {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-35px);
+  }
+}
+
+@keyframes move-up-text {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-65px);
+  }
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
